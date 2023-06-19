@@ -1,0 +1,78 @@
+"use client";
+
+import { FC } from "react";
+import LargeHeading from "./ui/LargeHeading";
+import Marquee from "react-fast-marquee";
+import Darken from "./ui/Darken";
+import Paragraph from "./ui/Paragraph";
+import { tech } from "@/constants/tech";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+interface TechProps {}
+
+const Tech: FC<TechProps> = ({}) => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".tech-heading", {
+        opacity: 0,
+        x: 240,
+        duration: 2,
+        scrollTrigger: {
+          trigger: ".tech-heading",
+          start: "top center+=200px",
+        },
+      });
+
+      gsap.from(".tech-grid", {
+        duration: 1,
+        scale: 0,
+        y: 40,
+        ease: "power1.inOut",
+        stagger: {
+          grid: [7, 15],
+          from: "random",
+          axis: "x",
+          ease: "power2.in",
+          amount: 1.5,
+        },
+        scrollTrigger: {
+          trigger: ".tech-wrapper",
+          start: "top center+=200px",
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div className="px-14 flex flex-col w-screen mt-52 mb-16">
+      <LargeHeading type="ghost" size="xxl" className="ml-8 tech-heading">
+        TECHSTACK
+      </LargeHeading>
+      <div className="translate-y-[-48px]">
+        <Marquee>
+          <Paragraph size="lg">
+            TECHNOLOGY <Darken>AND</Darken> LIBRARIES <Darken>USED IN</Darken>{" "}
+            MY PORTFOLIO
+          </Paragraph>
+        </Marquee>
+      </div>
+      <div className="w-[70%] mt-4 pointer-events-none grid grid-cols-4 gap-10 place-self-center tech-wrapper">
+        {tech.map((item, i) => (
+          <div
+            key={i}
+            className="tech-grid border-[1px] py-4 border-white flex justify-center items-center"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Tech;
