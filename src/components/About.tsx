@@ -9,7 +9,8 @@ import { skill } from "@/constants/skills";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { SplitText } from "gsap-trial/dist/SplitText";
+// import { SplitText } from "gsap-trial/dist/SplitText";
+import { SplitText } from "gsap/dist/SplitText";
 import { experience } from "@/constants/exp";
 // import BubbleCanvas from "./Bubble";
 
