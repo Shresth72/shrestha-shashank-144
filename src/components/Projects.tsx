@@ -6,13 +6,14 @@ import leaf1 from "../../public/leaf.png";
 import leaf2 from "../../public/leaf2.png";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import StaticImport from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+import StaticImport from "next/image";
 
 const Projects = ({}) => {
-  const [preview, setPreview] = useState<StaticImageData | StaticImport>();
+  const [preview, setPreview] = useState<string>();
+  let imgPrev:string = "../../public/canvas.png";
   const [hover, setHover] = useState<boolean>();
 
   const image = useRef<HTMLImageElement>(null);
@@ -119,6 +120,7 @@ const Projects = ({}) => {
             className={` relative rotate-[90deg] origin-center  text-[190px] hover:text-gray-300 transition-colors`}
             onMouseOver={(e) => {
               setPreview(project.img);
+              imgPrev = project.img;
               setHover(true);
             }}
             onMouseLeave={() => {
@@ -132,7 +134,7 @@ const Projects = ({}) => {
       {hover && (
         <Image
           ref={image}
-          src={preview}
+          src={imgPrev}
           alt=""
           className=" w-80 h-60 z-40 absolute pointer-events-none"
         />
