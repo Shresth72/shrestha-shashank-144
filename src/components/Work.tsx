@@ -10,7 +10,7 @@ import Darken from "./ui/Darken";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+// import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
 
 const Work = ({}) => {
 
