@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button, buttonVariants } from "@/components/ui/Button";
-import type { Metadata } from "next";
 import canvas from "../../public/canvas.png";
 import canvas2 from "../../public/canvas2.gif";
 import LargeHeading from "@/components/ui/LargeHeading";
@@ -10,11 +9,6 @@ import Paragraph from "@/components/ui/Paragraph";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
-
-export const metadata: Metadata = {
-  title: "Portfolio Website | Home",
-  description: "Portfolio Website of Shrestha Shashank",
-};
 
 export default function Home() {
   const main = useRef<HTMLDivElement>(null);
