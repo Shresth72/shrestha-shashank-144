@@ -12,7 +12,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
 
 const Projects = ({}) => {
-  const [preview, setPreview] = useState<StaticImageData | StaticImageData>();
+  const [preview, setPreview] = useState<StaticImageData | StaticImport>();
   const [hover, setHover] = useState<boolean>();
 
   const image = useRef<HTMLImageElement>(null);
