@@ -15,49 +15,6 @@ import { experience } from "@/constants/exp";
 interface AboutProps {}
 
 const About: FC<AboutProps> = ({}) => {
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     gsap.registerPlugin(ScrollTrigger, SplitText);
-
-  //     gsap.from(".about-heading", {
-  //       opacity: 0,
-  //       x: 240,
-  //       duration: 2,
-  //       scrollTrigger: {
-  //         trigger: ".about-heading",
-  //         start: "top center+=200px",
-  //       },
-  //     });
-
-  //     const splitText = new SplitText(".para-about", { type: "words, chars" });
-  //     const chars = splitText.chars;
-  //     const splitText2 = new SplitText(".about-li", { type: "words, chars" });
-  //     const chars2 = splitText2.chars;
-
-  //     gsap.from(chars, {
-  //       opacity: 0,
-  //       x: 20,
-  //       stagger: 0.01,
-  //       duration: 1,
-  //       scrollTrigger: {
-  //         trigger: ".para-about",
-  //         start: "top center+=200px",
-  //       },
-  //     });
-  //     gsap.from(chars2, {
-  //       opacity: 0,
-  //       x: 20,
-  //       stagger: 0.02,
-  //       duration: 1,
-  //       scrollTrigger: {
-  //         trigger: ".para-about",
-  //         start: "top center+=200px",
-  //       },
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
 
   return (
     <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative">
