@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-// import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
 import StaticImport from "next/image";
 
 const Projects = ({}) => {
@@ -56,7 +55,7 @@ const Projects = ({}) => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+      gsap.registerPlugin(ScrollTrigger);
 
       gsap.from(
         [
