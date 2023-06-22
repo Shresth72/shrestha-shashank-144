@@ -16,7 +16,7 @@ const Work = ({}) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    gsap.registerPlugin(ScrollTrigger);
 
       gsap.from(".work-heading", {
         opacity: 0,
