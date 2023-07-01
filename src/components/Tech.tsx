@@ -37,7 +37,7 @@ const Tech: FC<TechProps> = ({}) => {
           from: "random",
           axis: "x",
           ease: "power2.in",
-          amount: 1.5,
+          amount: 0.2,
         },
         scrollTrigger: {
           trigger: ".tech-wrapper",
@@ -65,7 +65,7 @@ const Tech: FC<TechProps> = ({}) => {
         {tech.map((item, i) => (
           <div
             key={i}
-            className="tech-grid border-[1px] py-4 border-white flex justify-center items-center"
+            className="tech-grid border-[1px] py-4 border-white flex justify-center items-center border-opacity-50 opacity-80"
           >
             {item}
           </div>
