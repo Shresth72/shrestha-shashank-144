@@ -1,20 +1,40 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Paragraph from "./ui/Paragraph";
 import LargeHeading from "./ui/LargeHeading";
 import Darken from "./ui/Darken";
 import { skill } from "@/constants/skills";
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { experience } from "@/constants/exp";
-// import BubbleCanvas from "./Bubble";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
 
 interface AboutProps {}
 
 const About: FC<AboutProps> = ({}) => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const animatePara = new SplitType(".para-about", { types: "chars" });
+      const animateList = new SplitType(".about-li", { types: "chars" });
+
+      gsap.from([animatePara.chars, animateList.chars], {
+        y: 20,
+        opacity: 0,
+        rotate: "5deg",
+        stagger: 0.005,
+        scrollTrigger: {
+          trigger: ".about-heading",
+          start: "bottom center",
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  });
 
   return (
     <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative">
@@ -58,7 +78,7 @@ const About: FC<AboutProps> = ({}) => {
           </div>
           <div className="mr-20">
             <Darken className="text-xs about-title">skills</Darken>
-            <ul className="list-none text-sm flex flex-col h-72 flex-wrap ">
+            <ul className="list-none text-sm flex flex-col h-72 flex-wrap  ">
               {skill.map((item, i) => (
                 <li key={i} className="about-li">
                   {item}

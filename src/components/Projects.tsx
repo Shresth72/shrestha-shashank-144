@@ -12,7 +12,7 @@ import StaticImport from "next/image";
 
 const Projects = ({}) => {
   const [preview, setPreview] = useState<string>();
-  let imgPrev:string = "../../public/canvas.png";
+  let imgPrev: string = "../../public/canvas.png";
   const [hover, setHover] = useState<boolean>();
 
   const image = useRef<HTMLImageElement>(null);
@@ -88,6 +88,20 @@ const Projects = ({}) => {
       );
     });
 
+    gsap.from(".leaf", {
+      // opacity: 0,
+      duration: 1,
+      y: 120,
+      scrollTrigger: {
+        trigger: "#project-1",
+        // markers: true,
+        start: "top bottom",
+        end: "clamp(bottom+=500px top)",
+        scrub: 2,
+        
+      },
+    });
+
     return () => ctx.revert();
   }, []);
 
@@ -97,13 +111,13 @@ const Projects = ({}) => {
         <Image
           src={leaf1}
           alt=""
-          className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a"
+          className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a leaf"
           width={800}
         />
         <Image
           src={leaf2}
           alt=""
-          className=" absolute left-32 z-10 brightness-75 origin-center rotate-[-210deg] translate-y-80 pointer-events-none leaf-b"
+          className=" absolute left-32 z-10 brightness-75 origin-center rotate-[-210deg] translate-y-80 pointer-events-none leaf-b leaf"
           width={400}
         />
       </div>
@@ -130,14 +144,14 @@ const Projects = ({}) => {
           </h1>
         </Link>
       ))}
-      {hover && (
+      {/* {hover && (
         <Image
           ref={image}
           src={imgPrev}
           alt=""
           className=" w-80 h-60 z-40 absolute pointer-events-none"
         />
-      )}
+      )} */}
     </div>
   );
 };
