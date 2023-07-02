@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Hero from "@/components/HomeComps/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

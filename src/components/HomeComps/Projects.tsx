@@ -2,8 +2,8 @@
 
 import Image, { StaticImageData } from "next/image";
 import { projectDetails } from "@/constants/projects";
-import leaf1 from "../../public/leaf.png";
-import leaf2 from "../../public/leaf2.png";
+import leaf1 from "../../../public/leaf.png";
+import leaf2 from "../../../public/leaf2.png";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";

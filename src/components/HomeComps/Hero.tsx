@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/Button";
-import canvas2 from "../../public/canvas2.gif";
+import canvas2 from "../../../public/canvas2.gif";
 import LargeHeading from "@/components/ui/LargeHeading";
 import Paragraph from "@/components/ui/Paragraph";
 import Link from "next/link";

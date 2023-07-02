@@ -2,9 +2,9 @@
 
 import { FC, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import Paragraph from "./ui/Paragraph";
-import LargeHeading from "./ui/LargeHeading";
-import Darken from "./ui/Darken";
+import Paragraph from "../ui/Paragraph";
+import LargeHeading from "../ui/LargeHeading";
+import Darken from "../ui/Darken";
 import { skill } from "@/constants/skills";
 import { experience } from "@/constants/exp";
 import SplitType from "split-type";

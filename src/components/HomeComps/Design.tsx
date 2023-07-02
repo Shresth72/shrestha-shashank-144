@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import Paragraph from "./ui/Paragraph";
-import Carousel from "./Carousel";
-import Darken from "./ui/Darken";
+import Paragraph from "../ui/Paragraph";
+import Carousel from "../Carousel";
+import Darken from "../ui/Darken";
 
 const Design = ({}) => {
   return (
@@ -13,9 +13,8 @@ const Design = ({}) => {
       <div className="">
         <Marquee>
           <Paragraph size="lg" className="uppercase">
-            DESIGN PROJECTS | <Darken>modern</Darken> {" "}
-            professionalism <Darken>with a</Darken> {" "}
-            creative <Darken>flair</Darken>
+            DESIGN PROJECTS | <Darken>modern</Darken> professionalism{" "}
+            <Darken>with a</Darken> creative <Darken>flair</Darken>
           </Paragraph>
         </Marquee>
       </div>

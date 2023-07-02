@@ -1,10 +1,10 @@
 "use client";
 
 import { FC } from "react";
-import LargeHeading from "./ui/LargeHeading";
+import LargeHeading from "../ui/LargeHeading";
 import Marquee from "react-fast-marquee";
-import Darken from "./ui/Darken";
-import Paragraph from "./ui/Paragraph";
+import Darken from "../ui/Darken";
+import Paragraph from "../ui/Paragraph";
 import { tech } from "@/constants/tech";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
