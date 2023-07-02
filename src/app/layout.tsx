@@ -30,7 +30,7 @@ export default function RootLayout({
           
           <About />
           <Tech />
-          <ContactUs />
+          {/* <ContactUs /> */}
       </body>
     </html>
   );
