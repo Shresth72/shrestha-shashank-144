@@ -28,20 +28,20 @@ const Projects = ({}) => {
         gsap.to(image.current, {
           opacity: 0,
           duration: 0,
-          x: e.clientX / 1.6 - 10,
+          x: e.clientX / 1.6 - 20,
           y:
             e.clientY / 2 -
             (window.scrollY < 1000
               ? window.scrollY / 12
               : -window.scrollY / 5) -
-            10,
+            20,
         });
         gsap.to(image.current, {
           x: e.clientX / 1.6,
           y:
             e.clientY / 2 -
             (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5),
-          duration: 0.5,
+          duration: 1,
           opacity: 1,
         });
       });
@@ -121,6 +121,7 @@ const Projects = ({}) => {
           alt=""
           className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a leaf"
           width={800}
+          priority
         />
         <Image
           src={leaf2}
