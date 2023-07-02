@@ -1,4 +1,3 @@
-
 import AnimatedCursor from "react-animated-cursor";
 
 const Pointer = ({}) => {
@@ -7,7 +6,6 @@ const Pointer = ({}) => {
       innerSize={9}
       color="255,255,255"
       outerSize={8}
-      trailingSpeed={2}
       innerStyle={{
         mixBlendMode: "exclusion",
       }}
