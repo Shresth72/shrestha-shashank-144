@@ -8,37 +8,56 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import StaticImport from "next/image";
 
 const Projects = ({}) => {
-  const [preview, setPreview] = useState<string>();
-  let imgPrev: string = "../../public/canvas.png";
   const [hover, setHover] = useState<boolean>();
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const image = useRef<HTMLImageElement>(null);
+  const image = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement>(null);
   const link = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+    // window.addEventListener("mousemove", (e) => {
+    //   e.preventDefault();
+    //   setPosition({ x: e.clientX, y: e.clientY + (window.innerHeight - window.scrollY) });
+    //   console.log(position.x, position.y);
+    // });
+
     let ctx = gsap.context(() => {
-      gsap.from(image.current, { scale: 0, duration: 0.4 });
+      //   gsap.to(image.current, {
+      //     x: position.x,
+      //     y: position.y,
+      //   });
 
-      let xTo = gsap.quickTo(image.current, "x", {
-          duration: 0.6,
-          ease: "power3",
-        }),
-        yTo = gsap.quickTo(image.current, "y", {
-          duration: 0.6,
-          ease: "power3",
-        });
-
+      // let xTo = gsap.quickTo(image.current, "x", {
+      //     duration: 0.6,
+      //     ease: "power3",
+      //   }),
+      //   yTo = gsap.quickTo(image.current, "y", {
+      //     duration: 0.6,
+      //     ease: "power3",
+      //   });
       window.addEventListener("mousemove", (e) => {
         e.preventDefault();
-        xTo(e.clientX / 1.6);
-        // yTo(e.clientY)
-        yTo(
-          e.clientY / 2 -
-            (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5)
-        );
+        // xTo(e.clientX / 1.6);
+        // yTo(
+        //   e.clientY / 2 -
+        //     (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5)
+        // );
+        gsap.to(image.current, {
+          opacity: 1,
+          duration: 0.4,
+        });
+        gsap.to(image.current, {
+          x: e.clientX / 1.6,
+          y:
+            e.clientY / 2 -
+            (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5),
+          duration: 0,
+        });
+        
       });
     });
 
@@ -51,7 +70,7 @@ const Projects = ({}) => {
     });
 
     return () => ctx.revert();
-  }, [preview]);
+  }, []);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -98,7 +117,6 @@ const Projects = ({}) => {
         start: "top bottom",
         end: "clamp(bottom+=500px top)",
         scrub: 2,
-        
       },
     });
 
@@ -106,7 +124,11 @@ const Projects = ({}) => {
   }, []);
 
   return (
-    <div className="flex p-8 relative">
+    <div
+      className="flex p-8 relative project-container"
+      onMouseOver={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <div className="image-wrapper">
         <Image
           src={leaf1}
@@ -130,13 +152,13 @@ const Projects = ({}) => {
         >
           <h1
             ref={link}
-            className={` relative rotate-[90deg] origin-center  text-[190px] hover:text-gray-300 transition-colors`}
+            className={`relative rotate-[90deg] origin-center text-[190px] hover:text-gray-300 transition-colors`}
             onMouseOver={(e) => {
-              setPreview(project.img);
-              imgPrev = project.img;
               setHover(true);
+              setActiveIndex(project.id);
             }}
             onMouseLeave={() => {
+              setActiveIndex(0);
               setHover(false);
             }}
           >
@@ -144,14 +166,25 @@ const Projects = ({}) => {
           </h1>
         </Link>
       ))}
-      {/* {hover && (
-        <Image
-          ref={image}
-          src={imgPrev}
-          alt=""
-          className=" w-80 h-60 z-40 absolute pointer-events-none"
-        />
-      )} */}
+
+      {hover &&
+        projectDetails
+          .filter((project) => project.id === activeIndex)
+          .map((filteredProject) => (
+            <div
+              key={filteredProject.id}
+              ref={image}
+              className="pointer-events-none absolute z-[100] w-80 h-60 opacity-0 "
+            >
+              <Image
+                src={filteredProject.img}
+                className="w-full h-full"
+                alt="image"
+                width={100}
+                height={100}
+              />
+            </div>
+          ))}
     </div>
   );
 };
