@@ -1,15 +1,13 @@
 "use client";
 
-import Design from "@/components/HomeComps/Design";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Providers from "@/components/Providers";
 import Work from "@/components/HomeComps/Work";
-import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import About from "@/components/HomeComps/About";
 import Tech from "@/components/HomeComps/Tech";
 import Pointer from "@/components/ui/Pointer";
+import ContactUs from "@/components/ContactForm";
 
 export default function RootLayout({
   children,
@@ -23,17 +21,16 @@ export default function RootLayout({
       id="wrapper"
     >
       <body className="bg-black antialiased" id="smooth-content">
-        <Providers>
           <Pointer />
            
           <Navbar />
           <Toaster position="bottom-right" />
           <main>{children}</main>
           <Work />
-          {/* <Design /> */}
+          
           <About />
           <Tech />
-        </Providers>
+          <ContactUs />
       </body>
     </html>
   );

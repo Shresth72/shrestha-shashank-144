@@ -19,45 +19,31 @@ const Projects = ({}) => {
   const link = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    // window.addEventListener("mousemove", (e) => {
-    //   e.preventDefault();
-    //   setPosition({ x: e.clientX, y: e.clientY + (window.innerHeight - window.scrollY) });
-    //   console.log(position.x, position.y);
-    // });
 
     let ctx = gsap.context(() => {
-      //   gsap.to(image.current, {
-      //     x: position.x,
-      //     y: position.y,
-      //   });
-
-      // let xTo = gsap.quickTo(image.current, "x", {
-      //     duration: 0.6,
-      //     ease: "power3",
-      //   }),
-      //   yTo = gsap.quickTo(image.current, "y", {
-      //     duration: 0.6,
-      //     ease: "power3",
-      //   });
+      
       window.addEventListener("mousemove", (e) => {
         e.preventDefault();
-        // xTo(e.clientX / 1.6);
-        // yTo(
-        //   e.clientY / 2 -
-        //     (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5)
-        // );
+        
         gsap.to(image.current, {
-          opacity: 1,
-          duration: 0.4,
+          opacity: 0,
+          duration: 0,
+          x: e.clientX / 1.6 - 10,
+          y:
+            e.clientY / 2 -
+            (window.scrollY < 1000
+              ? window.scrollY / 12
+              : -window.scrollY / 5) -
+            10,
         });
         gsap.to(image.current, {
           x: e.clientX / 1.6,
           y:
             e.clientY / 2 -
             (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5),
-          duration: 0,
+          duration: 0.5,
+          opacity: 1,
         });
-        
       });
     });
 
@@ -154,12 +140,10 @@ const Projects = ({}) => {
             ref={link}
             className={`relative rotate-[90deg] origin-center text-[190px] hover:text-gray-300 transition-colors`}
             onMouseOver={(e) => {
-              setHover(true);
               setActiveIndex(project.id);
             }}
             onMouseLeave={() => {
               setActiveIndex(0);
-              setHover(false);
             }}
           >
             {project.title}
