@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="bg-black antialiased" id="smooth-content">
         <Providers>
           <Pointer />
-           {/* <Cursor /> */}
+           
           <Navbar />
           <Toaster position="bottom-right" />
           <main>{children}</main>
