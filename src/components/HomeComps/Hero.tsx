@@ -15,6 +15,10 @@ const Hero: FC<HeroProps> = ({}) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.config({
+        nullTargetWarn: false,
+      });
+
       let tl = gsap.timeline();
 
       tl.from([".scroll-explore", ".heading"], {
@@ -44,8 +48,6 @@ const Hero: FC<HeroProps> = ({}) => {
 
     return () => ctx.revert(); //cleanup
   }, [main]);
-
-
 
   return (
     <main className="pl-8 pr-14 flex justify-end w-screen" ref={main}>
