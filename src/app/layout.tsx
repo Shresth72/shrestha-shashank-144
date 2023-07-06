@@ -24,7 +24,6 @@ export default function RootLayout({
         <Toaster position="bottom-right" />
         <main>{children}</main>
         <Work />
-
         <About />
         <Tech />
         <Contact />
