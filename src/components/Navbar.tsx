@@ -1,12 +1,23 @@
-
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Button, buttonVariants } from "./ui/Button";
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Navbar = ({}) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".nav-link", {
@@ -14,7 +25,7 @@ const Navbar = ({}) => {
         y: 30,
         stagger: 0.3,
         duration: 1,
-      })
+      });
     });
 
     return () => ctx.revert();
@@ -31,15 +42,23 @@ const Navbar = ({}) => {
           variant: "link",
         })}`}
       >
-        <div className="text-3xl">Design</div>
+        <div className="text-3xl">Creative</div>
         <div className="translate-x-6 text-3xl">Portfolio</div>
       </Link>
       <div className="flex justify-between w-[76%] items-end relative">
         <div className="flex overflow-hidden justify-between text-lg w-full pr-20 pl-1">
-          <Link href="/" className="nav-link">home</Link>
-          <Link href="/" className="nav-link">work</Link>
-          <Link href="/" className="nav-link">about</Link>
-          <Link href="/" className="nav-link">techstack</Link>
+          <Link href="/" className="nav-link">
+            home
+          </Link>
+          <Link href="#work" className="nav-link" onClick={handleScroll}>
+            work
+          </Link>
+          <Link href="#about" className="nav-link" onClick={handleScroll}>
+            about
+          </Link>
+          <Link href="#tech" className="nav-link" onClick={handleScroll}>
+            techstack
+          </Link>
         </div>
 
         <div className="relative">

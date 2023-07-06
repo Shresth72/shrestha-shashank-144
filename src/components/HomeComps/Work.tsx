@@ -35,6 +35,7 @@ const Work = ({}) => {
     <div
       className="px-14 py-32 pt-52 flex flex-col w-screen mb-[700px]"
       style={{ fontFamily: "Afrah" }}
+      id="work"
     >
       <LargeHeading type="ghost" size="xxl" className="ml-8 work-heading">
         WORK

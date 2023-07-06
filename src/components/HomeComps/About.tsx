@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 import Marquee from "react-fast-marquee";
 import Paragraph from "../ui/Paragraph";
 import LargeHeading from "../ui/LargeHeading";
@@ -14,6 +14,7 @@ import { gsap } from "gsap";
 interface AboutProps {}
 
 const About: FC<AboutProps> = ({}) => {
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -37,7 +38,7 @@ const About: FC<AboutProps> = ({}) => {
   });
 
   return (
-    <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative">
+    <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative" id="about">
       <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading">
         ABOUT
       </LargeHeading>

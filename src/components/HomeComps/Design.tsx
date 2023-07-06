@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import Paragraph from "../ui/Paragraph";
 import Carousel from "../Carousel";

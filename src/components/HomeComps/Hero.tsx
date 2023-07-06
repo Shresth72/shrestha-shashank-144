@@ -58,7 +58,12 @@ const Hero: FC<HeroProps> = ({}) => {
         scroll to explore
       </Paragraph>
       <div className="w-[80%] h-[440px] relative overflow-hidden">
-        <Image priority src={canvas2} alt="bg" className="w-full bg-cover blur-sm" />
+        <Image
+          priority
+          src={canvas2}
+          alt="bg"
+          className="w-full bg-cover blur-sm"
+        />
 
         <div className="absolute top-0 p-10 pt-8 pl-12 pr-14">
           <LargeHeading size="xl" className="heading">
