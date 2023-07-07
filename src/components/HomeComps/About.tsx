@@ -19,10 +19,10 @@ const About: FC<AboutProps> = ({}) => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const animatePara = new SplitType(".para-about", { types: "chars" });
-      const animateList = new SplitType(".about-li", { types: "chars" });
+      const animatePara = new SplitType(".para-about", { types: "words" });
+      const animateList = new SplitType(".about-li", { types: "words" });
 
-      gsap.from([animatePara.chars, animateList.chars], {
+      gsap.from([animatePara.words, animateList.words], {
         y: 20,
         opacity: 0,
         rotate: "5deg",

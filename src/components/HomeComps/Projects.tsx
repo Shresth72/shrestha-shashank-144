@@ -55,7 +55,7 @@ const Projects = ({}) => {
           trigger: "#project-1",
           // markers: true,
           start: "top bottom",
-          end: "clamp(bottom+=500px top)",
+          end: "bottom+=500px top",
           scrub: 2,
         },
       });
