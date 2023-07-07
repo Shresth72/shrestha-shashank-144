@@ -11,39 +11,32 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Projects = ({}) => {
   const [hover, setHover] = useState<boolean>();
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
-  const image = useRef<HTMLDivElement>(null);
-  const container = useRef<HTMLDivElement>(null);
+  const [preview, setPreview] = useState<any>();
+  const image = useRef<HTMLImageElement>(null);
   const link = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-
     let ctx = gsap.context(() => {
-      
+      let xTo = gsap.quickTo(image.current, "x", {
+          duration: 0.8,
+          ease: "power3",
+        }),
+        yTo = gsap.quickTo(image.current, "y", {
+          duration: 0.8,
+          ease: "power3",
+        });
+
       window.addEventListener("mousemove", (e) => {
-        e.preventDefault();
-        
-        gsap.to(image.current, {
-          opacity: 0,
-          duration: 0,
-          x: e.clientX / 1.6 - 20,
-          y:
-            e.clientY / 2 -
-            (window.scrollY < 1000
-              ? window.scrollY / 12
-              : -window.scrollY / 5) -
-            20,
-        });
-        gsap.to(image.current, {
-          x: e.clientX / 1.6,
-          y:
-            e.clientY / 2 -
-            (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5),
-          duration: 1,
-          opacity: 1,
-        });
+        xTo(e.clientX - 100);
+        yTo(
+          e.clientY / 2 -
+            (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5)
+        );
+      });
+
+      gsap.to(image.current, {
+        opacity: 1,
+        duration: 1,
       });
     });
 
@@ -53,6 +46,19 @@ const Projects = ({}) => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(image.current, { opacity: 0 });
+
+      gsap.from(".leaf", {
+        opacity: 1,
+        duration: 1,
+        y: 120,
+        scrollTrigger: {
+          trigger: "#project-1",
+          // markers: true,
+          start: "top bottom",
+          end: "clamp(bottom+=500px top)",
+          scrub: 2,
+        },
+      });
     });
 
     return () => ctx.revert();
@@ -93,19 +99,6 @@ const Projects = ({}) => {
       );
     });
 
-    gsap.from(".leaf", {
-      // opacity: 0,
-      duration: 1,
-      y: 120,
-      scrollTrigger: {
-        trigger: "#project-1",
-        // markers: true,
-        start: "top bottom",
-        end: "clamp(bottom+=500px top)",
-        scrub: 2,
-      },
-    });
-
     return () => ctx.revert();
   }, []);
 
@@ -141,35 +134,23 @@ const Projects = ({}) => {
             ref={link}
             className={`relative rotate-[90deg] origin-center text-[190px] hover:text-gray-300 transition-colors`}
             onMouseOver={(e) => {
-              setActiveIndex(project.id);
+              setPreview(project.img);
             }}
-            onMouseLeave={() => {
-              setActiveIndex(0);
-            }}
+            onMouseLeave={() => {}}
           >
             {project.title}
           </h1>
         </Link>
       ))}
 
-      {hover &&
-        projectDetails
-          .filter((project) => project.id === activeIndex)
-          .map((filteredProject) => (
-            <div
-              key={filteredProject.id}
-              ref={image}
-              className="pointer-events-none absolute z-[100] w-80 h-60 opacity-0 "
-            >
-              <Image
-                src={filteredProject.img}
-                className="w-full h-full"
-                alt="image"
-                width={100}
-                height={100}
-              />
-            </div>
-          ))}
+      {hover && (
+        <Image
+          src={preview}
+          alt="project-image"
+          ref={image}
+          className=" w-[320px] h-[190px] z-50 absolute pointer-events-none left-0 top-0"
+        />
+      )}
     </div>
   );
 };
