@@ -45,6 +45,8 @@ const Projects = ({}) => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
       gsap.from(image.current, { opacity: 0 });
 
       gsap.from(".leaf", {
@@ -112,14 +114,14 @@ const Projects = ({}) => {
         <Image
           src={leaf1}
           alt=""
-          className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a leaf"
+          className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a leaf translate-x-4"
           width={800}
           priority
         />
         <Image
           src={leaf2}
           alt=""
-          className=" absolute left-32 z-10 brightness-75 origin-center rotate-[-210deg] translate-y-80 pointer-events-none leaf-b leaf"
+          className=" absolute left-32 z-10 brightness-75 origin-center rotate-[-210deg] translate-y-80 -translate-x-2 pointer-events-none leaf-b leaf"
           width={400}
         />
       </div>

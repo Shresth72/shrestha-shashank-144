@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Paragraph from "../ui/Paragraph";
 import LargeHeading from "../ui/LargeHeading";
@@ -10,6 +10,8 @@ import { experience } from "@/constants/exp";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
+import flower from "../../../public/Flower.jpg";
+import Image from "next/image";
 
 interface AboutProps {}
 
@@ -37,20 +39,47 @@ const About: FC<AboutProps> = ({}) => {
     return () => ctx.revert();
   });
 
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".flower", {
+        
+        y: 120,
+        scrollTrigger: {
+          trigger: ".para-about",
+          markers: true,
+          start: "top bottom",
+          end: "bottom+=500px top",
+          scrub: 2,
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative" id="about">
-      <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading">
+      <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading z-10">
         ABOUT
       </LargeHeading>
-      <div className="translate-y-[-48px]">
+      <div className="translate-y-[-48px] z-20">
         <Marquee>
-          <Paragraph size="lg">
+          <Paragraph size="lg" >
             SHRESTHA <Darken>SHASHANK</Darken> - <Darken>DELHI</Darken>, INDIA{" "}
             <Darken>-</Darken> I CAN, <Darken>BECAUSE</Darken> I DID
           </Paragraph>
         </Marquee>
       </div>
+      
       <div className="flex justify-between text-left px-8">
+      <Image
+          priority
+          src={flower}
+          alt="bg"
+          className="flower absolute w-[600px] z-0 top-16 left-[50%] -translate-x-1/2 opacity-50"
+        />
         <div className=" w-[300px] flex flex-col gap-16">
           <Paragraph className="para-about">
             I love bringing ideas to life through crafted visuals and meaningful

@@ -7,8 +7,9 @@ import Darken from "../ui/Darken";
 import Paragraph from "../ui/Paragraph";
 import { tech } from "@/constants/tech";
 import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import { gsap, random } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import SplitType from "split-type";
 
 interface TechProps {}
 
@@ -65,7 +66,7 @@ const Tech: FC<TechProps> = ({}) => {
         {tech.map((item, i) => (
           <div
             key={i}
-            className="tech-grid border-[1px] py-4 border-white flex justify-center items-center border-opacity-50 opacity-80"
+            className="tech-words tech-grid border-[1px] py-4 border-white flex justify-center items-center border-opacity-50 opacity-80"
           >
             {item}
           </div>
