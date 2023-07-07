@@ -34,7 +34,7 @@ const Hero: FC<HeroProps> = ({}) => {
           delay: -0.5,
           ease: "power3.out",
         })
-        .from([".resume", ".contact"], {
+        .from([".resume", ".contact-link"], {
           opacity: 0,
           y: 10,
           duration: 1,
@@ -86,7 +86,7 @@ const Hero: FC<HeroProps> = ({}) => {
               href="/"
               className={` underline ${buttonVariants({
                 variant: "link",
-              })} contact`}
+              })} contact-link`}
             >
               Contact
             </Link>

@@ -45,13 +45,13 @@ const About: FC<AboutProps> = ({}) => {
 
       gsap.from(".flower", {
         
-        y: 120,
+        y: 60,
         scrollTrigger: {
           trigger: ".para-about",
-          markers: true,
+          // markers: true,
           start: "top bottom",
           end: "bottom+=500px top",
-          scrub: 2,
+          scrub: 1,
         },
       });
     });
@@ -60,7 +60,7 @@ const About: FC<AboutProps> = ({}) => {
   }, []);
 
   return (
-    <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative" id="about">
+    <div className="px-14 flex flex-col w-screen mt-4 pt-48 relative p-10" id="about">
       <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading z-10">
         ABOUT
       </LargeHeading>
@@ -78,7 +78,7 @@ const About: FC<AboutProps> = ({}) => {
           priority
           src={flower}
           alt="bg"
-          className="flower absolute w-[600px] z-0 top-16 left-[50%] -translate-x-1/2 opacity-50"
+          className="flower absolute w-[800px] z-0 top-[50%] -translate-y-[49%] left-[50%] -translate-x-1/2 opacity-30"
         />
         <div className=" w-[300px] flex flex-col gap-16">
           <Paragraph className="para-about">

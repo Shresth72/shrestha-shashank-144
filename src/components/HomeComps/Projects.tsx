@@ -134,7 +134,7 @@ const Projects = ({}) => {
         >
           <h1
             ref={link}
-            className={`relative rotate-[90deg] origin-center text-[190px] hover:text-gray-300 transition-colors`}
+            className={`relative rotate-[90deg] origin-center text-[190px] hover:text-[#bec6d5] transition-all duration-[1s]`}
             onMouseOver={(e) => {
               setPreview(project.img);
             }}
