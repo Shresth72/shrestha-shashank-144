@@ -1,4 +1,6 @@
-import React, { FC, useState, ChangeEvent } from "react";
+"use client";
+
+import React, { FC, useState, ChangeEvent, useEffect } from "react";
 import {
   Container,
   Heading,
@@ -13,6 +15,9 @@ import toast from "react-hot-toast";
 import { Button } from "../ui/Button";
 import { sendContactForm } from "@/lib/api";
 import { FormValues } from "@/lib/formValues";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Footer from "./Footer";
 
 interface ContactProps {}
 
@@ -91,11 +96,33 @@ const Contact: FC<ContactProps> = () => {
     }
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.defaults({ duration: 2 });
+
+      gsap.to(".contact-form", {
+        y: -500,
+        scrollTrigger: {
+          trigger: ".tech-container",
+          start: "clamp(bottom bottom)",
+          markers: true,
+          end: "bottom center-=100",
+          scrub: 1,
+          
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <Container
       style={{ fontFamily: "Afrah" }}
       mt={12}
-      className="w-[100vw] h-[100vh] relative flex items-center justify-center flex-col gap-10"
+      
+      className="contact-form w-[100vw] h-[140vh] absolute pb-0 px-0 bg-black  pt-10 flex items-center justify-center flex-col gap-10"
     >
       <Heading className="text-5xl">Get In Touch</Heading>
       {error && (
@@ -179,6 +206,7 @@ const Contact: FC<ContactProps> = () => {
       >
         Submit
       </Button>
+      <Footer />
     </Container>
   );
 };

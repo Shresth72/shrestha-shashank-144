@@ -8,6 +8,7 @@ import Paragraph from "@/components/ui/Paragraph";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { useRef, useEffect, FC } from "react";
+import { handleScroll } from "../ui/handleScroll";
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
@@ -72,8 +73,8 @@ const Hero: FC<HeroProps> = ({}) => {
           <Paragraph className="text-left mt-2 paragraph">
             As a skilled full-stack developer, I am dedicated to turning ideas
             into innovative web applications. Explore my latest projects and
-            articles, showcasing my expertise in React.js, web development and
-            Graphic designing.
+            articles, showcasing my expertise in React.js, Web Development and
+            Graphic Designing.
           </Paragraph>
           <div className="mt-3 flex gap-4" style={{ fontFamily: "Afrah" }}>
             <Link
@@ -83,7 +84,8 @@ const Hero: FC<HeroProps> = ({}) => {
               Resume
             </Link>
             <Link
-              href="/"
+              href="#contact-form"
+              onClick={handleScroll}
               className={` underline ${buttonVariants({
                 variant: "link",
               })} contact-link`}

@@ -4,19 +4,10 @@ import Link from "next/link";
 import { Button, buttonVariants } from "./ui/Button";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import { handleScroll } from "./ui/handleScroll";
 
 const Navbar = ({}) => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+  
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -1,41 +1,44 @@
-import canvas from "../../public/canvas.png"
-import hero from "../../public/bubble.png"
+import canvas from "../../public/canvas.png";
+import hero from "../../public/bubble.png";
+import three from "../../public/ThreeJs.png";
+import codepen from "../../public/codepen2.png";
 
 export const projectDetails = [
   {
     id: 1,
     title: "APP",
-    imgUrl: "../../public/projects/1.png",
     img: hero,
+    link: "/",
   },
   {
     id: 2,
-    title: "WEBAPP",
-    imgUrl: "../../public/canvas.png",
+    title: "MOTION",
     img: canvas,
+    link: "/",
   },
   {
     id: 3,
     title: "CODEPEN",
-    imgUrl: "../../public/projects/1.png",
-    img: hero,
+    img: codepen,
+    link: "https://codepen.io/shresth72",
   },
   {
     id: 4,
-    title: "OPENAI",
-    imgUrl: "../../public/canvas.png",
+    title: "REACT",
     img: canvas,
+    link: "/",
   },
   {
     id: 5,
     title: "THREE",
-    imgUrl: "../../public/projects/1.png",
-    img: hero,
+    img: three,
+    link: "https://three-fiber-customizer.vercel.app",
   },
   {
     id: 6,
-    title: "REACT",
-    imgUrl: "../../public/canvas.png",
+
+    title: "BEHANCE",
     img: canvas,
+    link: "https://www.behance.net/shrivassneha",
   },
 ];

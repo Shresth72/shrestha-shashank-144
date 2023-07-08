@@ -127,8 +127,9 @@ const Projects = ({}) => {
       </div>
       {projectDetails.map((project) => (
         <Link
-          href="/"
+          href={project.link}
           key={project.id}
+          target="_blank"
           className="w-44 relative projects"
           id={`project-${project.id}`}
         >
@@ -138,7 +139,6 @@ const Projects = ({}) => {
             onMouseOver={(e) => {
               setPreview(project.img);
             }}
-            onMouseLeave={() => {}}
           >
             {project.title}
           </h1>
@@ -150,7 +150,7 @@ const Projects = ({}) => {
           src={preview}
           alt="project-image"
           ref={image}
-          className=" w-[320px] h-[190px] z-50 absolute pointer-events-none left-0 top-0"
+          className=" object-cover w-[330px] h-[190px] z-50 absolute pointer-events-none left-0 top-0"
         />
       )}
     </div>

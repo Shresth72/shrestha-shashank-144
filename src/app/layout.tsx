@@ -8,6 +8,7 @@ import About from "@/components/HomeComps/About";
 import Tech from "@/components/HomeComps/Tech";
 import Contact from "@/components/HomeComps/Contact";
 
+
 export default function RootLayout({
   children,
 }: {
@@ -19,7 +20,7 @@ export default function RootLayout({
       className="bg-black text-slate-50 overflow-x-hidden dark"
       id="wrapper"
     >
-      <body className="bg-black antialiased" id="smooth-content">
+      <body className="bg-black antialiased pb-0" id="smooth-content">
         <Navbar />
         <Toaster position="bottom-right" />
         <main>{children}</main>
@@ -27,6 +28,7 @@ export default function RootLayout({
         <About />
         <Tech />
         <Contact />
+        
       </body>
     </html>
   );

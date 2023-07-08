@@ -118,8 +118,6 @@ const About: FC<AboutProps> = ({}) => {
           </div>
         </div>
       </div>
-
-      {/* <BubbleCanvas /> */}
     </div>
   );
 };
