@@ -27,7 +27,7 @@ const Projects = ({}) => {
         });
 
       window.addEventListener("mousemove", (e) => {
-        xTo(e.clientX - 100);
+        xTo(e.clientX - 160);
         yTo(
           e.clientY / 2 -
             (window.scrollY < 1000 ? window.scrollY / 12 : -window.scrollY / 5)
@@ -106,7 +106,7 @@ const Projects = ({}) => {
 
   return (
     <div
-      className="flex p-8 relative project-container"
+      className="flex p-[2.58vw] relative project-container"
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -130,12 +130,12 @@ const Projects = ({}) => {
           href={project.link}
           key={project.id}
           target="_blank"
-          className="w-44 relative projects"
+          className="w-[14.2vw] relative projects"
           id={`project-${project.id}`}
         >
           <h1
             ref={link}
-            className={`relative rotate-[90deg] origin-center text-[190px] hover:text-[#bec6d5] transition-all duration-[1s]`}
+            className={`relative rotate-[90deg] origin-center text-[14.7vw] hover:text-[#bec6d5] transition-all duration-[1s]`}
             onMouseOver={(e) => {
               setPreview(project.img);
             }}
@@ -150,7 +150,7 @@ const Projects = ({}) => {
           src={preview}
           alt="project-image"
           ref={image}
-          className=" object-cover w-[330px] h-[190px] z-50 absolute pointer-events-none left-0 top-0"
+          className=" object-cover lg:w-[26.6vw] lg:h-[15.3vw] z-50 absolute pointer-events-none left-0 top-0 sm:w-[110px] sm:h-[55px]"
         />
       )}
     </div>

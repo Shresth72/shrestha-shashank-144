@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import About from "@/components/HomeComps/About";
 import Tech from "@/components/HomeComps/Tech";
 import Contact from "@/components/HomeComps/Contact";
+import Footer from "@/components/HomeComps/Footer";
 
 
 export default function RootLayout({

@@ -33,7 +33,7 @@ const Work = ({}) => {
 
   return (
     <div
-      className="px-14 py-32 pt-52 flex flex-col w-screen mb-[700px]"
+      className="px-[4.5vw] py-32 pt-52 flex flex-col w-screen mb-[700px]"
       style={{ fontFamily: "Afrah" }}
       id="work"
     >

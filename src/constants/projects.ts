@@ -2,6 +2,8 @@ import canvas from "../../public/canvas.png";
 import hero from "../../public/bubble.png";
 import three from "../../public/ThreeJs.png";
 import codepen from "../../public/codepen2.png";
+import behance from "../../public/Behance.png";
+import chaos from "../../public/Chaos.png";
 
 export const projectDetails = [
   {
@@ -24,8 +26,8 @@ export const projectDetails = [
   },
   {
     id: 4,
-    title: "REACT",
-    img: canvas,
+    title: "CHAOS",
+    img: chaos,
     link: "/",
   },
   {
@@ -38,7 +40,7 @@ export const projectDetails = [
     id: 6,
 
     title: "BEHANCE",
-    img: canvas,
+    img: behance,
     link: "https://www.behance.net/shrivassneha",
   },
 ];

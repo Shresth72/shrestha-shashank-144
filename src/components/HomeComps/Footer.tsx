@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { FaBehance, FaLinkedin, FaGithub } from "react-icons/fa";
+import React, { useEffect} from "react";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
@@ -7,90 +7,62 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer: React.FC = () => {
-  const quoteRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const socialRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const quote = quoteRef.current;
-    const contact = contactRef.current;
-    const social = socialRef.current;
-
-    gsap.from(quote, {
+    gsap.from([".quote", ".details", ".social"], {
       opacity: 0,
       y: 20,
       duration: 1,
+      stagger: 0.4,
       scrollTrigger: {
-        trigger: quote,
-        start: "top 80%",
-      },
-    });
-
-    gsap.from(contact, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      scrollTrigger: {
-        trigger: contact,
-        start: "top 80%",
-      },
-    });
-
-    gsap.from(social, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      scrollTrigger: {
-        trigger: social,
+        trigger: ".quote",
         start: "top 80%",
       },
     });
   }, []);
 
   return (
-    <footer className="bg-black text-gray-300 py-4 w-full relative bottom-0 border-t-[1px]  border-b-gray-900">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="text-lg" ref={quoteRef}>
-          <h2>Quote</h2>
+    <footer className=" text-white h-64 relative bottom-0 text-sm translate-y-[90vh] py-4 w-full bg-black" style={{ fontFamily: "Afrah" }}>
+      <div className="container mx-auto flex items-start justify-between">
+        <div className=" quote w-1/3 text-3xl" >
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div className="text-center" ref={contactRef}>
-          <h2>Contact Details</h2>
-          <p>Location: New York, USA</p>
-          <p>Email: example@example.com</p>
-          <p>Phone: +1 123-456-7890</p>
-          <p>Additional Info: Some text</p>
-          <p>Additional Info: Some text</p>
+        <div className="text-left details  ">
+          <h2 className="uppercase mb-2">Delhi, India</h2>
+          <p className=" underline">shashankshrestha539@gmail.com</p>
+          
         </div>
-        <div className="text-right" ref={socialRef}>
-          <h2>Follow Me</h2>
-          <div className="flex justify-end">
+        
+        <div className="social flex flex-col items-end">
+          <h2 className="mb-2">Follow Me</h2>
+          <div className="flex justify-between gap-2">
             <Link
-              href="https://www.behance.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaBehance
-                className="text-gray-300 hover:text-white mr-4"
-                size={24}
-              />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/shrestha-shashank-38002b22b/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin
-                className="text-gray-300 hover:text-white mr-4"
+                className="text-gray-300 hover:text-white"
                 size={24}
               />
             </Link>
+
             <Link
-              href="https://github.com/"
+              href="https://github.com/Shresth72"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub className="text-gray-300 hover:text-white" size={24} />
+            </Link>
+            
+            <Link
+              href="https://www.instagram.com/shashankshrestha144/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram
+                className="text-gray-300 hover:text-white"
+                size={24}
+              />
             </Link>
           </div>
         </div>

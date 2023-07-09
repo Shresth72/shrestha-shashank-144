@@ -102,14 +102,13 @@ const Contact: FC<ContactProps> = () => {
       gsap.defaults({ duration: 2 });
 
       gsap.to(".contact-form", {
-        y: -500,
+        y: -300,
         scrollTrigger: {
-          trigger: ".tech-container",
-          start: "clamp(bottom bottom)",
-          markers: true,
-          end: "bottom center-=100",
+          trigger: ".contact-form",
+          start: "top-=100 bottom",
+          end: "top top",
           scrub: 1,
-          
+          // markers: true,
         },
       });
     });
@@ -122,7 +121,7 @@ const Contact: FC<ContactProps> = () => {
       style={{ fontFamily: "Afrah" }}
       mt={12}
       
-      className="contact-form w-[100vw] h-[140vh] absolute pb-0 px-0 bg-black  pt-10 flex items-center justify-center flex-col gap-10"
+      className="contact-form w-[100vw] h-[100vh] pb-0 px-0 bg-black  pt-10 flex items-center justify-center flex-col gap-10"
     >
       <Heading className="text-5xl">Get In Touch</Heading>
       {error && (
@@ -206,7 +205,7 @@ const Contact: FC<ContactProps> = () => {
       >
         Submit
       </Button>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 };

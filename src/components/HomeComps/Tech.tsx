@@ -10,6 +10,7 @@ import { useRef, useEffect } from "react";
 import { gsap, random } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
+import Footer from "./Footer";
 
 interface TechProps {}
 
@@ -63,7 +64,7 @@ const Tech: FC<TechProps> = ({}) => {
         </Marquee>
       </div>
       <div className="w-[70%] mt-4 pointer-events-none grid grid-cols-4 gap-10 place-self-center tech-wrapper">
-        <div id="contact-form" className=" absolute bottom-[155px]"></div>
+        <div id="contact-form" className=" absolute bottom-[200px]"></div>
         {tech.map((item, i) => (
           <div
             key={i}
@@ -74,6 +75,7 @@ const Tech: FC<TechProps> = ({}) => {
           </div>
         ))}
       </div>
+      <Footer  />
     </div>
   );
 };
