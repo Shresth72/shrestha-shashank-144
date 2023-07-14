@@ -53,7 +53,7 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <main className="bmid:pl-4 px-8 md:pr-14   md:pl-8 flex justify-end w-screen" ref={main}>
     <Paragraph
-      className="scroll-explore absolute left-0 rotate-[-90deg] hidden md:visible bottom-9"
+      className="scroll-explore absolute left-0 rotate-[-90deg] hidden md:block bottom-9"
       size="xs"
     >
       scroll to explore
@@ -66,7 +66,7 @@ const Hero: FC<HeroProps> = ({}) => {
         className="w-full bg-cover blur-sm h-full"
       />
   
-      <div className="absolute top-0 md:p-10 flex flex-col gap-2 p-12 md:block bmid:pl-12 md:pl-12 bmid:pr-14 md:pr-14 -translate-y-2">
+      <div className="absolute top-0 md:p-10 flex flex-col gap-3 sm:gap-2 p-12 bmid:block bmid:pl-12 md:pl-12 bmid:pr-14 md:pr-14 -translate-y-2">
         <LargeHeading size="xl" className="heading">
           Turning Vision into reality with Code and Design
         </LargeHeading>
