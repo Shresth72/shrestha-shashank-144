@@ -66,7 +66,7 @@ const Hero: FC<HeroProps> = ({}) => {
         className="w-full bg-cover blur-sm h-full"
       />
   
-      <div className="absolute top-0 md:p-10 flex flex-col gap-4 p-12 md:block bmid:pl-12 md:pl-12 bmid:pr-14 md:pr-14 -translate-y-2">
+      <div className="absolute top-0 md:p-10 flex flex-col gap-2 p-12 md:block bmid:pl-12 md:pl-12 bmid:pr-14 md:pr-14 -translate-y-2">
         <LargeHeading size="xl" className="heading">
           Turning Vision into reality with Code and Design
         </LargeHeading>
