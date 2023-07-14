@@ -52,7 +52,7 @@ const Tech: FC<TechProps> = ({}) => {
 
   return (
     
-    <div className="tech-container relative px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 mt-16 mb-8" id="tech">
+    <div className="tech-container relative px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 mt-36 mb-8" id="tech">
         <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading z-10">
           TECHSTACK
       </LargeHeading>
@@ -64,7 +64,7 @@ const Tech: FC<TechProps> = ({}) => {
             </Paragraph>
           </Marquee>
       </div>
-        <div id="contact-form" className=" absolute bottom-[380px] md:bottom-[300px]"></div>
+        <div id="contact-form" className=" absolute bottom-[360px]"></div>
         <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24 px-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {tech.map((item, i) => (
             <div

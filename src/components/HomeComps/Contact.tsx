@@ -105,7 +105,7 @@ const Contact: FC<ContactProps> = () => {
         y: -500,
         scrollTrigger: {
           trigger: ".contact-form",
-          start: "top bottom",
+          start: "top+=50 bottom",
           end: "top top",
           scrub: 1,
           // markers: true,
