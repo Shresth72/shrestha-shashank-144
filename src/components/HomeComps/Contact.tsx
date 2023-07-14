@@ -17,7 +17,7 @@ import { sendContactForm } from "@/lib/api";
 import { FormValues } from "@/lib/formValues";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Footer from "./Footer";
+
 
 interface ContactProps {}
 
@@ -102,10 +102,10 @@ const Contact: FC<ContactProps> = () => {
       gsap.defaults({ duration: 2 });
 
       gsap.to(".contact-form", {
-        y: -300,
+        y: -500,
         scrollTrigger: {
           trigger: ".contact-form",
-          start: "top-=100 bottom",
+          start: "top bottom",
           end: "top top",
           scrub: 1,
           // markers: true,
@@ -205,7 +205,7 @@ const Contact: FC<ContactProps> = () => {
       >
         Submit
       </Button>
-      {/* <Footer /> */}
+      
     </Container>
   );
 };

@@ -18,11 +18,11 @@ export const theme = {
     sm: "640px",
     // => @media (min-width: 640px) { ... }
 
-    md: "768px",
-    // => @media (min-width: 768px) { ... }
+    md: "804px",
+    // => @media (min-width: 804px) { ... }
 
-    bmid: "928px",
-    // => @media (min-width: 928px) { ... }
+    bmid: "923px",
+    // => @media (min-width: 923px) { ... }
 
     lg: "1024px",
     // => @media (min-width: 1024px) { ... }

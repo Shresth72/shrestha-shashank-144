@@ -51,29 +51,29 @@ const Hero: FC<HeroProps> = ({}) => {
   }, [main]);
 
   return (
-    <main className="pl-4 md:pl-8 pr-4 md:pr-14 flex justify-end w-screen" ref={main}>
+    <main className="bmid:pl-4 sm:px-8 md:pr-14   md:pl-8 flex justify-end w-screen" ref={main}>
     <Paragraph
-      className="scroll-explore absolute left-0 rotate-[-90deg] bottom-9"
+      className="scroll-explore absolute left-0 rotate-[-90deg] hidden md:visible bottom-9"
       size="xs"
     >
       scroll to explore
     </Paragraph>
-    <div className="w-full md:w-[80%] h-[440px] relative overflow-hidden">
+    <div className="w-full md:w-[80%] right-0 p-0 bmid:h-[440px] md:h-[500px] sm:h-[70vh] relative overflow-hidden">
       <Image
         priority
         src={canvas2}
         alt="bg"
-        className="w-full bg-cover blur-sm"
+        className="w-full bg-cover blur-sm h-full"
       />
   
-      <div className="absolute top-0 p-4 md:p-10  pl-4 md:pl-12 pr-4 md:pr-14 -translate-y-2">
+      <div className="absolute top-0 md:p-10 sm:p-12 bmid:pl-12 md:pl-12 bmid:pr-14 md:pr-14 -translate-y-2">
         <LargeHeading size="xl" className="heading">
           Turning Vision into reality with Code and Design
         </LargeHeading>
         <Paragraph className="text-left mt-2 paragraph">
           As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js, Web Development, and Graphic Designing.
         </Paragraph>
-        <div className="mt-3 flex flex-col md:flex-row gap-4" style={{ fontFamily: "Afrah" }}>
+        <div className="sm:mt-4 bmid:mt-3 bmid:flex mid:flex-col md:flex-row bmid:gap-4" style={{ fontFamily: "Afrah" }}>
           <Link
             href="/"
             className={`${buttonVariants({ variant: "black" })} resume`}
