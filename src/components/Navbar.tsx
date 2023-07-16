@@ -7,8 +7,6 @@ import { useEffect, useRef } from "react";
 import { handleScroll } from "./ui/handleScroll";
 
 const Navbar = ({}) => {
-  
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".nav-link", {
@@ -51,6 +49,30 @@ const Navbar = ({}) => {
             techstack
           </Link>
         </div>
+
+        {/* <div className="pb-2 pt-0 pl-8 pr-4 md:pr-14 flex flex-col md:flex-row items-end justify-between w-full border-b-[1px] relative z-20 border-b-gray-950">
+  <Link
+    href="/"
+    className={`flex flex-col ${buttonVariants({ variant: "link" })}`}
+  >
+    <div className="text-2xl md:text-3xl text-center md:text-left">Creative</div>
+    <div className="text-2xl md:text-3xl text-center md:text-left">Portfolio</div>
+  </Link>
+  <div className="flex flex-col md:flex-row justify-between w-full items-end relative">
+    <div className="flex overflow-hidden justify-between text-base md:text-lg w-full pr-6 md:pr-20 pl-1">
+      <Link href="/" className="nav-link">
+        home
+      </Link>
+      <Link href="#work" className="nav-link" onClick={handleScroll}>
+        work
+      </Link>
+      <Link href="#about" className="nav-link" onClick={handleScroll}>
+        about
+      </Link>
+      <Link href="#tech" className="nav-link" onClick={handleScroll}>
+        techstack
+      </Link>
+    </div> */}
 
         <div className="relative">
           <svg

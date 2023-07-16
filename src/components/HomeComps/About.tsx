@@ -96,7 +96,7 @@ const About: FC<AboutProps> = ({}) => {
           </Paragraph>
         </div>
         <div className="flex flex-col justify-between">
-          <div>
+          {/* <div>
             <Darken className="text-xs about-title">experience</Darken>
             <ul className="list-none text-sm flex flex-col flex-wrap ">
               {experience.map((item, i) => (
@@ -105,7 +105,7 @@ const About: FC<AboutProps> = ({}) => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           <div className="mr-20">
             <Darken className="text-xs about-title">skills</Darken>
             <ul className="list-none text-sm flex flex-col h-72 flex-wrap  ">
