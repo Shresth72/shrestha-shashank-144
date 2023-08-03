@@ -35,7 +35,7 @@ export const projectDetails = [
   },
   {
     id: 5,
-    title: "APP",
+    title: "SKINCARE",
     img: app,
     link: "https://smart-skin-care-next.vercel.app/",
   },

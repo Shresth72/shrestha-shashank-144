@@ -18,7 +18,6 @@ import { FormValues } from "@/lib/formValues";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-
 interface ContactProps {}
 
 const initValues: FormValues = {
@@ -107,7 +106,7 @@ const Contact: FC<ContactProps> = () => {
           trigger: ".contact-form",
           start: "top+=50 bottom",
           end: "top top",
-          scrub: 1,
+          scrub: 2,
           // markers: true,
         },
       });
@@ -120,16 +119,17 @@ const Contact: FC<ContactProps> = () => {
     <Container
       style={{ fontFamily: "Afrah" }}
       mt={12}
-      
-      className="contact-form w-[100vw] h-[100vh] pb-0 px-0 bg-black  pt-10 flex items-center justify-center flex-col gap-10"
+      className="contact-form w-full min-h-screen pb-0 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 xxl:px-16 bg-black pt-10 flex items-center justify-center flex-col gap-8"
     >
-      <Heading className="text-5xl">Get In Touch</Heading>
+      <Heading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl xxl:text-8xl">
+        Get In Touch
+      </Heading>
       {error && (
         <Text color="red.300" my={4} fontSize="xl">
           {error}
         </Text>
       )}
-      <div className="flex text-xl gap-2">
+      <div className="flex flex-col sm:flex-row text-xl sm:gap-2 gap-8">
         <FormControl
           isInvalid={touched.name && !values.name}
           className="flex relative gap-2"
@@ -175,7 +175,7 @@ const Contact: FC<ContactProps> = () => {
         isInvalid={touched.message && !values.message}
         className="flex relative gap-2 text-xl translate-x-12"
       >
-        <FormLabel>Your Message :</FormLabel>
+        <FormLabel>Your Message </FormLabel>
         <Textarea
           placeholder={"your message"}
           className="outline-none resize-none bg-transparent text-gray-400 underline"
@@ -205,7 +205,6 @@ const Contact: FC<ContactProps> = () => {
       >
         Submit
       </Button>
-      
     </Container>
   );
 };

@@ -114,14 +114,14 @@ const Projects = ({}) => {
         <Image
           src={leaf1}
           alt=""
-          className=" absolute right-0 z-10 brightness-75 pointer-events-none leaf-a leaf translate-x-4"
+          className=" absolute right-0 z-10 w-[70%] brightness-75 pointer-events-none leaf-a leaf -translate-y-12 translate-x-4"
           width={800}
           priority
         />
         <Image
           src={leaf2}
           alt=""
-          className=" absolute left-32 z-10 brightness-75 origin-center rotate-[-210deg] translate-y-80 -translate-x-2 pointer-events-none leaf-b leaf"
+          className=" absolute left-[10%] z-10 w-[35%] brightness-75 origin-center rotate-[-210deg] translate-y-[30%] -translate-x-2 pointer-events-none leaf-b leaf"
           width={400}
         />
       </div>
