@@ -106,7 +106,7 @@ const Contact: FC<ContactProps> = () => {
           trigger: ".contact-form",
           start: "top+=50 bottom",
           end: "top top",
-          scrub: 2,
+          scrub:1,
           // markers: true,
         },
       });
