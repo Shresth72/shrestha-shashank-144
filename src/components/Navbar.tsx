@@ -34,7 +34,7 @@ const Navbar = ({}) => {
         <div className="text-3xl">Creative</div>
         <div className="translate-x-6 text-3xl">Portfolio</div>
       </Link>
-      <div className="flex justify-between w-[76%] items-end relative">
+      <div className="justify-between w-[76%] items-end relative hidden md:flex">
         <div className="flex overflow-hidden justify-between text-lg w-full pr-20 pl-1">
           <Link href="/" className="nav-link">
             home

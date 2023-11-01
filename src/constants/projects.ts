@@ -10,7 +10,6 @@ import app from "../../public/app.png";
 export const projectDetails = [
   {
     id: 1,
-
     title: "MOTION",
     img: motion,
     link: "https://number-scape.vercel.app",
@@ -29,9 +28,9 @@ export const projectDetails = [
   },
   {
     id: 4,
-    title: "CHAOS",
+    title: "BREADIT",
     img: chaos,
-    link: "/",
+    link: "reddit-glass-morphism.vercel.app",
   },
   {
     id: 5,
