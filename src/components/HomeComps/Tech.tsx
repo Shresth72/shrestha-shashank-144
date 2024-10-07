@@ -12,9 +12,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
 import Footer from "./Footer";
 
-interface TechProps {}
+interface TechProps { }
 
-const Tech: FC<TechProps> = ({}) => {
+const Tech: FC<TechProps> = ({ }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -51,35 +51,38 @@ const Tech: FC<TechProps> = ({}) => {
   }, []);
 
   return (
-    
-    <div className="tech-container relative px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 mt-36 mb-8" id="tech">
-        <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading z-10">
-          TECHSTACK
+    <div
+      className="tech-container relative px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 mt-36 mb-8"
+      id="tech"
+    >
+      <LargeHeading type="ghost" size="xxl" className="ml-8 about-heading z-10">
+        EXPERIENCE
       </LargeHeading>
       <div className="translate-y-[-48px] z-20">
-        
         <Marquee>
-            <Paragraph size="lg">
-              TECHNOLOGY <Darken>AND</Darken> LIBRARIES <Darken>USED IN</Darken> MY PORTFOLIO
-            </Paragraph>
-          </Marquee>
+          <Paragraph size="lg">
+            MY <Darken>WORK</Darken> EXPERIENCE | <Darken>Internships </Darken>{" "}
+            | University Work
+          </Paragraph>
+        </Marquee>
       </div>
-        <div id="contact-form" className=" absolute bottom-[360px]"></div>
-        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-24 px-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-          {tech.map((item, i) => (
-            <div
-              key={i}
-             
-              className="relative cursor-pointer inline-flex items-center justify-center p-3 py-5 overflow-hidden font-bold text-white opacity-70 shadow-2xl group"
-            >
-              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 bg-gradient-to-br from-[#222] via-[#666] to-[#999] group-hover:opacity-2"></span>
-              <span className="absolute inset-0 w-full h-full border border-white opacity-40"></span>
-              <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-5"></span>
-              <span className="relative">{item}</span>
-            </div>
-          ))}
+      <div id="contact-form" className=" absolute bottom-[360px]"></div>
+
+      <div className="flex flex-col sm:flex-row justify-between text-left mt-6 sm:mt-8 md:mt-10">
+        <div className="w-full sm:w-1/2 flex flex-col gap-6 sm:gap-10">
+          <Paragraph className="para-about">
+            Cloud Engineer Intern at Brainwave Matrix Solutions | June 2024 -
+            August 2024
+          </Paragraph>
+          <Paragraph className="para-about">
+            Software Engineer Intern at ___ | Jan 2025 - June 2025
+          </Paragraph>
+          <Paragraph className="para-about">
+            Design and Intrumentals Head at Crescendo NSUT
+          </Paragraph>
         </div>
-      
+      </div>
+
       <Footer />
     </div>
   );

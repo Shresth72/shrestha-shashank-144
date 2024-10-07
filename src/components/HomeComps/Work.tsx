@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const Work = ({}) => {
+const Work = ({ }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +43,7 @@ const Work = ({}) => {
       <div className="translate-y-[-48px]">
         <Marquee>
           <Paragraph size="lg">
-            WEB PROJECTS | EXEMPLIFY <Darken>MODERN</Darken> PROFESSIONLISM
+            PROJECTS | <Darken>WEB</Darken> DEVOPS <Darken>NETWORKING</Darken>
           </Paragraph>
         </Marquee>
       </div>

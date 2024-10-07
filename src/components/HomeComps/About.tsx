@@ -12,9 +12,9 @@ import { gsap } from "gsap";
 import flower from "../../../public/Flower.jpg";
 import Image from "next/image";
 
-interface AboutProps {}
+interface AboutProps { }
 
-const About: FC<AboutProps> = ({}) => {
+const About: FC<AboutProps> = ({ }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -70,7 +70,6 @@ const About: FC<AboutProps> = ({}) => {
           <Marquee>
             <Paragraph size="lg">
               SHRESTHA <Darken>SHASHANK</Darken> - <Darken>DELHI</Darken>, INDIA{" "}
-              <Darken>-</Darken> I CAN, <Darken>BECAUSE</Darken> I DID
             </Paragraph>
           </Marquee>
         </div>
@@ -78,18 +77,22 @@ const About: FC<AboutProps> = ({}) => {
         <div className="flex flex-col sm:flex-row justify-between text-left mt-6 sm:mt-8 md:mt-10">
           <div className="w-full sm:w-1/2 flex flex-col gap-6 sm:gap-10">
             <Paragraph className="para-about">
-              I love bringing ideas to life through crafted visuals and
-              meaningful animations, playing with colors, composition,
-              typography and details.
+              As a passionate full-stack developer, I focus on building
+              efficient and scalable web applications. I enjoy tackling complex
+              problems, from backend systems to frontend interactions.
             </Paragraph>
             <Paragraph className="para-about">
-              Currently a 3rd year student at Netaji Subhas University of
-              Technology, Delhi. Pursuing B-Tech in Computer Science and
-              Engineering.
+              My expertise includes Python, Go, and Rust for backend
+              development, along with PostgreSQL, Redis, and Kafka for building
+              reliable services. I also have a deep understanding of networking
+              with TCP/UDP, BPF programs, and tools like Wireshark.
             </Paragraph>
             <Paragraph className="para-about">
-              I also do Illustrations and graphic designing and love to play
-              guitar and perform in stage gigs.
+              On the frontend, I bring user interfaces to life using React,
+              Tailwind, and GSAP, ensuring seamless and engaging experiences.
+              I’m also well-versed in DevOps with Docker and Kubernetes,
+              allowing me to streamline deployments and maintain scalable
+              infrastructure.
             </Paragraph>
           </div>
           <div className="w-full sm:w-[22%] mt-6 sm:mt-0 ">
