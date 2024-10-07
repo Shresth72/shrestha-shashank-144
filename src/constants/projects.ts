@@ -26,7 +26,7 @@ export const projectDetails = [
   },
   {
     id: 4,
-    title: "C ENGINE",
+    title: "RENDER",
     img: github,
     link: "https://github.com/Shresth72/render_gl",
   },
