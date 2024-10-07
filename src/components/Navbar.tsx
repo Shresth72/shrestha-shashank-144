@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { handleScroll } from "./ui/handleScroll";
 
-const Navbar = ({}) => {
+const Navbar = ({ }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".nav-link", {
@@ -36,9 +36,6 @@ const Navbar = ({}) => {
       </Link>
       <div className="justify-between w-[76%] items-end relative hidden md:flex">
         <div className="flex overflow-hidden justify-between text-lg w-full pr-20 pl-1">
-          <Link href="/" className="nav-link">
-            home
-          </Link>
           <Link href="#work" className="nav-link" onClick={handleScroll}>
             work
           </Link>
@@ -47,6 +44,9 @@ const Navbar = ({}) => {
           </Link>
           <Link href="#tech" className="nav-link" onClick={handleScroll}>
             techstack
+          </Link>
+          <Link href="#contact" className="nav-link">
+            contact
           </Link>
         </div>
 

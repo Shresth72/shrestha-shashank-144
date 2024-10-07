@@ -27,7 +27,10 @@ export default function RootLayout({
       className="bg-black text-slate-50 overflow-x-hidden dark"
       id="wrapper"
     >
-      <body className="bg-black antialiased pb-0" id="smooth-content">
+      <body
+        className="bg-black antialiased pb-0 pt-[-10px]"
+        id="smooth-content"
+      >
         {/* <ScrollToTopOnViewportChange /> */}
         <Navbar />
         <Toaster position="bottom-right" />
@@ -36,7 +39,6 @@ export default function RootLayout({
         <About />
         <Tech />
         <Contact />
-        
       </body>
     </html>
   );

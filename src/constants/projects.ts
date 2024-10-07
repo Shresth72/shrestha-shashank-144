@@ -1,42 +1,40 @@
-import canvas from "../../public/canvas.png";
-import hero from "../../public/bubble.png";
-import three from "../../public/ThreeJs.png";
+import billiance from "../../public/billiance.png";
+import github from "../../public/github.jpg";
 import codepen from "../../public/codepen2.png";
 import behance from "../../public/Behance.png";
-import chaos from "../../public/Chaos.png";
-import motion from "../../public/motion.png";
+import k8s from "../../public/k8s.png";
 import app from "../../public/app.png";
 
 export const projectDetails = [
   {
     id: 1,
-    title: "MOTION",
-    img: motion,
-    link: "https://number-scape.vercel.app",
+    title: "BILLIANCE",
+    img: billiance,
+    link: "https://billiance-app-jrla.vercel.app/",
   },
   {
     id: 2,
-    title: "THREE",
-    img: three,
-    link: "https://three-fiber-customizer.vercel.app",
+    title: "RAFT",
+    img: github,
+    link: "https://github.com/Shresth72/distributed_systems_jepsen",
   },
   {
     id: 3,
-    title: "CODEPEN",
-    img: codepen,
-    link: "https://codepen.io/shresth72",
+    title: "KUBEOPS",
+    img: k8s,
+    link: "https://github.com/Shresth72/kubeops",
   },
   {
     id: 4,
-    title: "BREADIT",
-    img: chaos,
-    link: "reddit-glass-morphism.vercel.app",
+    title: "C ENGINE",
+    img: github,
+    link: "https://github.com/Shresth72/render_gl",
   },
   {
     id: 5,
-    title: "SKINCARE",
+    title: "CODEPEN",
     img: app,
-    link: "https://smart-skin-care-next.vercel.app/",
+    link: "https://codepen.io/shresth72",
   },
   {
     id: 6,
